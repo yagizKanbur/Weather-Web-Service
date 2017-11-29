@@ -1,31 +1,30 @@
 package com.weatherwebapp.weatherapp;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import java.io.Serializable;
+
 
 @Entity
-@Table(name = "CityDB")
-public class City implements Serializable{
+public class City{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ID")
-    private int ID;
+    private long id;
 
-    @Column(name="cityName")
-    private String cityName;
+    public City() {
 
-    @Column(name="countryName")
-    private String countryName;
-
-    public int getId() {
-        return ID;
     }
 
-    public void setId(int ID) {
-        this.ID = ID;
+    private String cityName;
+
+    private String countryName;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getCityName() {
